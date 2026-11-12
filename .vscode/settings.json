@@ -1,0 +1,4 @@
+{
+  "task.allowAutomaticTasks": "on",
+  "files.exclude": { "**/node_modules": true, "**/dist": true }
+}

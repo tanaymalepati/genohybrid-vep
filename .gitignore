@@ -1,0 +1,17 @@
+node_modules
+dist
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+.venv.nosync/
+ml/artifacts/annotation_cache.sqlite-journal
+
+# Build output and OS files
+tsconfig.tsbuildinfo
+.DS_Store

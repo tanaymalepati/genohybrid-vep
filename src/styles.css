@@ -1,0 +1,506 @@
+/* Poppins is self-hosted from /public/fonts so the app renders identically
+   with no network connection. */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poppins-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/poppins-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/poppins-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/poppins-700.woff2') format('woff2');
+}
+
+:root {
+  --paper: #f7f7f5;
+  --surface: #ffffff;
+  --sunken: #f2f3f1;
+  --rule: #e2e4e0;
+  --rule-strong: #cbcec8;
+
+  --ink: #1c1f1d;
+  --ink-2: #4a504c;
+  --ink-3: #7b827d;
+
+  --accent: #2f5d50;
+  --accent-soft: #eaf1ee;
+
+  --path: #a83246;
+  --path-soft: #fbeef0;
+  --benign: #2f6b4f;
+  --benign-soft: #ecf4ef;
+  --vus: #9a6a12;
+  --vus-soft: #fbf3e4;
+
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.mono,
+code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.93em;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Header ---------- */
+
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+
+.topbar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: 62px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.brand-sub {
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 400;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.nav a {
+  padding: 7px 13px;
+  border-radius: var(--radius);
+  color: var(--ink-2);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  background: var(--sunken);
+  color: var(--ink);
+}
+
+.nav a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- Page ---------- */
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 34px 32px 80px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin: 0 0 5px;
+}
+
+h2 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 14px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+
+.sub {
+  color: var(--ink-2);
+  margin: 0 0 30px;
+  max-width: 62ch;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+
+.panel + .panel {
+  margin-top: 18px;
+}
+
+.panel-flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.panel-head {
+  padding: 18px 24px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+.grid.cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 940px) {
+  .grid.cols-2,
+  .grid.cols-3,
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .topbar-inner,
+  .page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .brand-sub {
+    display: none;
+  }
+}
+
+/* ---------- Forms ---------- */
+
+.field {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: 8px 11px;
+  font-family: inherit;
+  font-size: 13.5px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+input[type='file'] {
+  padding: 9px;
+  background: var(--sunken);
+  border-style: dashed;
+  cursor: pointer;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.ghost {
+  background: var(--surface);
+  color: var(--ink-2);
+  border-color: var(--rule-strong);
+}
+
+button.ghost:hover:not(:disabled) {
+  filter: none;
+  background: var(--sunken);
+  color: var(--ink);
+}
+
+button.small {
+  padding: 5px 11px;
+  font-size: 12.5px;
+}
+
+/* Segmented control */
+.segmented {
+  display: inline-flex;
+  background: var(--sunken);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 3px;
+  gap: 3px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.segmented button {
+  background: transparent;
+  border: 0;
+  color: var(--ink-2);
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.segmented button:hover {
+  filter: none;
+  color: var(--ink);
+}
+
+.segmented button[aria-pressed='true'] {
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.07);
+}
+
+/* ---------- Semantics ---------- */
+
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.tag.Pathogenic {
+  color: var(--path);
+  background: var(--path-soft);
+}
+.tag.Benign {
+  color: var(--benign);
+  background: var(--benign-soft);
+}
+.tag.VUS {
+  color: var(--vus);
+  background: var(--vus-soft);
+}
+
+.bar {
+  height: 6px;
+  background: var(--sunken);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+}
+
+.readout {
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.readout-label {
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
+thead th {
+  color: var(--ink-3);
+  font-weight: 500;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: var(--sunken);
+  border-bottom-color: var(--rule-strong);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr.clickable {
+  cursor: pointer;
+}
+
+tbody tr.clickable:hover {
+  background: var(--accent-soft);
+}
+
+td.num,
+th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+tr.highlight td {
+  background: var(--accent-soft);
+  font-weight: 500;
+}
+
+/* ---------- Misc ---------- */
+
+.note {
+  background: var(--sunken);
+  border-left: 2px solid var(--rule-strong);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 11px 15px;
+  color: var(--ink-2);
+  font-size: 13px;
+  margin: 0;
+}
+
+.note.warn {
+  background: var(--vus-soft);
+  border-left-color: var(--vus);
+  color: #6d4a09;
+}
+
+.note.error {
+  background: var(--path-soft);
+  border-left-color: var(--path);
+  color: #7d2333;
+}
+
+.muted {
+  color: var(--ink-3);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.spread {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--rule);
+  margin: 20px -24px;
+}
+
+.caption {
+  color: var(--ink-3);
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
+.empty {
+  color: var(--ink-3);
+  text-align: center;
+  padding: 44px 20px;
+  font-size: 13.5px;
+}

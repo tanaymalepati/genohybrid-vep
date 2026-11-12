@@ -1,0 +1,13 @@
+##fileformat=VCFv4.2
+##reference=GRCh38
+##contig=<ID=18>
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Format: Allele|Consequence|SYMBOL|Feature">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+18	22181553	CV_DEMO	G	A	.	PASS	CSQ=A|missense_variant|GATA6|
+2	127423071	CV_DEMO	G	A	.	PASS	CSQ=A|missense_variant|PROC|
+2	21009169	CV_DEMO	G	A	.	PASS	CSQ=A|intergenic_variant|APOB|
+19	33301803	CV_DEMO	C	A	.	PASS	CSQ=A|synonymous_variant|CEBPA|
+11	47347855	CV_DEMO	A	T	.	PASS	CSQ=T|splice_region_variant|MYBPC3|
+7	66089689	CV_DEMO	G	C	.	PASS	CSQ=C|synonymous_variant|ASL|
+12	51914445	CV_DEMO	G	A	.	PASS	CSQ=A|missense_variant|ACVRL1|
+21	33335549	CV_DEMO	A	G	.	PASS	CSQ=G|synonymous_variant|IFNAR1|

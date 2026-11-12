@@ -1,0 +1,19 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.9
+python-multipart>=0.0.12
+sqlalchemy>=2.0
+psycopg[binary]>=3.2
+alembic>=1.13
+httpx>=0.27
+reportlab>=4.2
+pytest>=8
+
+# Model
+numpy
+pandas
+pyarrow
+scikit-learn
+torch
+torch-geometric
+pyBigWig

@@ -1,0 +1,109 @@
+[
+  {
+    "model_version": "genohybrid-trimodal-38f68f5",
+    "evaluated_at": "2026-10-11T00:00:00Z",
+    "split": "gene_holdout",
+    "accuracy": 0.87855,
+    "precision": 0.7638106301091172,
+    "recall": 0.8357163332311118,
+    "f1": 0.7867081817799922,
+    "roc_auc": 0.9359529492754399,
+    "pr_auc": 0.8455587541686443,
+    "mcc": 0.7710522599791174,
+    "ece": 0.016268684388186277,
+    "confusion_matrix": [
+      [
+        3827,
+        131,
+        1177
+      ],
+      [
+        608,
+        29880,
+        4133
+      ],
+      [
+        4152,
+        1944,
+        54148
+      ]
+    ],
+    "classes": [
+      "Pathogenic",
+      "Benign",
+      "VUS"
+    ],
+    "calibration": [
+      {
+        "bin_lower": 0.0,
+        "bin_upper": 0.1,
+        "mean_confidence": 0.05,
+        "observed_accuracy": 0.0,
+        "count": 0
+      },
+      {
+        "bin_lower": 0.1,
+        "bin_upper": 0.2,
+        "mean_confidence": 0.15000000000000002,
+        "observed_accuracy": 0.0,
+        "count": 0
+      },
+      {
+        "bin_lower": 0.2,
+        "bin_upper": 0.3,
+        "mean_confidence": 0.25,
+        "observed_accuracy": 0.0,
+        "count": 0
+      },
+      {
+        "bin_lower": 0.3,
+        "bin_upper": 0.4,
+        "mean_confidence": 0.37760327168180463,
+        "observed_accuracy": 0.28169014084507044,
+        "count": 71
+      },
+      {
+        "bin_lower": 0.4,
+        "bin_upper": 0.5,
+        "mean_confidence": 0.47348876839857973,
+        "observed_accuracy": 0.43167701863354035,
+        "count": 966
+      },
+      {
+        "bin_lower": 0.5,
+        "bin_upper": 0.6,
+        "mean_confidence": 0.5523560642838593,
+        "observed_accuracy": 0.5690757128810227,
+        "count": 4068
+      },
+      {
+        "bin_lower": 0.6,
+        "bin_upper": 0.7,
+        "mean_confidence": 0.654834612006139,
+        "observed_accuracy": 0.7367670364500792,
+        "count": 6310
+      },
+      {
+        "bin_lower": 0.7,
+        "bin_upper": 0.8,
+        "mean_confidence": 0.7524740933754994,
+        "observed_accuracy": 0.809027060524685,
+        "count": 9682
+      },
+      {
+        "bin_lower": 0.8,
+        "bin_upper": 0.9,
+        "mean_confidence": 0.8614687644879341,
+        "observed_accuracy": 0.8702514582618499,
+        "count": 20401
+      },
+      {
+        "bin_lower": 0.9,
+        "bin_upper": 1.0,
+        "mean_confidence": 0.9424453482599159,
+        "observed_accuracy": 0.93786537212403,
+        "count": 58502
+      }
+    ]
+  }
+]
